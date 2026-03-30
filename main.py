@@ -13,6 +13,7 @@ import os
 load_dotenv()
 key = os.environ.get('FLASK_KEY')
 #this key can be whatever you want, but you have to set for the code to run
+auth = os.environ.get('AUTHORIZATION')
 
 class MovieForm(FlaskForm):
     rating = FloatField("Your Rating Out of 10 e.g. 8.5" , validators = [DataRequired()])
@@ -73,7 +74,7 @@ MOVIE_DB_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 
 headers = {
     "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZTYyNmExNTNjYWYwMDQzMzE1NGI5MmYwZjM2OGQ3MCIsIm5iZiI6MTc2MTkzODg4NC43NTksInN1YiI6IjY5MDUwZGM0ODFkMDI1MDJmODJmZGZjMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ggpcYCdyYj09oH4I6zOrvS8g2itZt2RswwuX7WqZ41A"
+    "Authorization": auth
 }
 
 
